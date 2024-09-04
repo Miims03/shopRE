@@ -2,7 +2,7 @@ import React from 'react'
 
 function Indic() {
   return (
-    <div className="absolute bottom-4 left-4 text-2xl text-stone-900 dark:text-stone-300">
+    <div className="absolute bottom-4 left-4 text-2xl text-zinc-900 dark:text-zinc-300">
       <span className="sm:hidden font-bold">XS</span>
       <span className="hidden sm:flex  md:hidden font-bold">SM</span>
       <span className="hidden md:flex lg:hidden font-bold">MD</span>

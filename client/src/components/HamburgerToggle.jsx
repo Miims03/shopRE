@@ -1,11 +1,17 @@
 import React from 'react'
 
-export default function HamburgerToggle() {
+export default function HamburgerToggle({active, check, disable}) {
     return (
-        <label className="btn btn-circle swap swap-rotate">
-            <input type="checkbox" />
+        <label className="btn btn-circle swap swap-rotate absolute z-20 border-transparent bg-transparent shadow-none hover:bg-transparent hover:border-transparent hover:scale-110 duration-500"
+            onChange={active}
+            >
+            <input className='bg-white'
+            type="checkbox" 
+            checked={check}
+            disabled={disable}
+            />
             <svg
-                className="swap-off fill-current"
+                className="swap-off fill-zinc-900 dark:fill-zinc-300"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -13,7 +19,7 @@ export default function HamburgerToggle() {
                 <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
             </svg>
             <svg
-                className="swap-on fill-current"
+                className="swap-on fill-zinc-900 dark:fill-zinc-300"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"

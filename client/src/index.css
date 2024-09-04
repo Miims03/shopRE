@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-border {
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to right, #d4d4d8, #3f3d3c);
+    background-image: linear-gradient(to right, #d4d4d8, #3f3d3c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+.gradient-border-dark {
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to right, #18181b, #969290);
+    background-image: linear-gradient(to right, #18181b, #969290);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
