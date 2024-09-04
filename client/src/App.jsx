@@ -5,6 +5,7 @@ import Navbar from './layouts/Navbar'
 import Indic from './layouts/Indic'
 import Shop from './pages/Shop'
 import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' exact element={<Home />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <Indic />

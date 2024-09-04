@@ -21,9 +21,18 @@ export const fetchAllUsers = async () => {
     }
 };
 
-export const loginUser = async (username, password) => {
+export const loginUser = async ({username, email, password}) => {
     try {
-        const response = await axiosInstance.post('/users/login', { username, password });
+        const response = await axiosInstance.post('/users/login', { username, email, password });
+        return response.data;
+    } catch (error) {
+        throw error; // Propager l'erreur pour le traitement dans le composant
+    }
+};
+
+export const signupUser = async ({username, email, password}) => {
+    try {
+        const response = await axiosInstance.post('/users/register', { username, email, password });
         return response.data;
     } catch (error) {
         throw error; // Propager l'erreur pour le traitement dans le composant
