@@ -30,7 +30,7 @@ export default function DrakModeToggle() {
     const toggleDarkMode = () => setDarkMode(!darkMode);
 
     return (
-        <main className='fixed bottom-4 right-4'>
+        <main className='fixed bottom-4 right-4 z-20'>
 
             <label className={`swap swap-rotate scale-75`} >
                 <input type="checkbox" 

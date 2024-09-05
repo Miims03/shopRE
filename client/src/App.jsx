@@ -6,6 +6,7 @@ import Indic from './layouts/Indic'
 import Shop from './pages/Shop'
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import Logout from './components/Logout';
 
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
     dark:from-[#3f3d3c] dark:via-zinc-900 dark:to-zinc-900 h-screen w-screen flex flex-col justify-start items-center'>
       <Navbar />
       <Routes>
-        <Route path='/' exact element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/shop' element={<Shop />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
+        <Route path='/logout' element={<Logout />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <Indic />

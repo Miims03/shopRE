@@ -1,19 +1,18 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'; // Si vous utilisez react-router-dom
+import { useNavigate  } from 'react-router-dom'; // Si vous utilisez react-router-dom
 
 const Logout = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleLogout = () => {
-        // Supprimer le token du localStorage
         localStorage.removeItem('token');
-        
-        // Rediriger l'utilisateur vers la page de connexion ou une autre page
-        history.push('/login');
+        navigate('/login');
     };
 
     return (
-        <button onClick={handleLogout}>Logout</button>
+        <button onClick={handleLogout}>
+            Logout
+        </button>
     );
 };
 

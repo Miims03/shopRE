@@ -17,9 +17,6 @@ const registerUser = async (req, res) => {
 
         const isEmailValid = await checkEmailValidity(email);
 
-        if (!isEmailValid)
-            return res.status(400).json("Email does not exist...")
-
         const user = await userModel.findOne({
             where: {
                 username: username,
@@ -28,14 +25,17 @@ const registerUser = async (req, res) => {
         })
 
         if (user) {
-            if (user.email === email)
-                return res.status(400).json('Email already registered.')
             if (user.username === username)
                 return res.status(400).json('Username already registered.')
+            if (user.email === email)
+                return res.status(400).json('Email already registered.')
         }
 
         if (!username || !email || !password || !dob || !firstname || !lastname)
             return res.status(400).json('All fields required...')
+        
+        if (!isEmailValid)
+            return res.status(400).json("Email does not exist...")
 
         if (!validator.isEmail(email))
             return res.status(400).json("Email is not valid...")
@@ -72,7 +72,7 @@ const loginUser = async (req, res) => {
     const { username, email, password } = req.body
 
     if ((!username && !email) || !password) {
-        return res.status(400).json({ message: 'Username/email and password are required' });
+        return res.status(400).json('Username/email and password are required' );
     }
 
     try {

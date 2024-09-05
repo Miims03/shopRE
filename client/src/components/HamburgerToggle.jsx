@@ -9,6 +9,7 @@ export default function HamburgerToggle({active, check, disable}) {
             type="checkbox" 
             checked={check}
             disabled={disable}
+            readOnly
             />
             <svg
                 className="swap-off fill-zinc-900 dark:fill-zinc-300"

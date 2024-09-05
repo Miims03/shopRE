@@ -6,7 +6,6 @@ export const fetchUserData = async (userId) => {
         const response = await axiosInstance.get(`/users/find/${userId}`);
         return response.data;
     } catch (error) {
-        console.error('Error fetching user data:', error);
         throw error; // Propager l'erreur pour une gestion ultérieure
     }
 };
@@ -16,7 +15,6 @@ export const fetchAllUsers = async () => {
         const response = await axiosInstance.get('/users/find');
         return response.data;
     } catch (error) {
-        console.error('Error fetching users:', error);
         throw error; // Propager l'erreur pour une gestion ultérieure
     }
 };

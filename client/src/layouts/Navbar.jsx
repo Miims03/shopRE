@@ -3,7 +3,6 @@ import { NavLink, useLocation } from 'react-router-dom'
 import DrakModeToggle from '../components/DrakModeToggle'
 import HamburgerToggle from '../components/HamburgerToggle'
 import Logo from '/testt.svg'
-import CartLogo from '/cart.svg'
 export default function Navbar() {
 
   const links = [
@@ -16,7 +15,7 @@ export default function Navbar() {
 
   const [mobileMenu, setMobileMenu] = useState(false)
 
-  const [isChecked, setIsChecked] = useState(null)
+  const [isChecked, setIsChecked] = useState(false)
   const [isDisabled, setIsDisabled] = useState(false)
 
   const AnimeMobileToggle = useRef(null);
@@ -52,15 +51,15 @@ export default function Navbar() {
       <section className='flex lg:hidden w-full h-full relative p-4 '>
         <HamburgerToggle active={toggleMobileMenu} check={isChecked} disable={isDisabled} />
         {mobileMenu && (
-          <div ref={AnimeMobileToggle} className={`bg-transparent w-screen h-screen animate__animated ${mobileMenu ? 'animate__slideInLeft' : ''}  animate__faster absolute top-0 left-0 pt-2 flex items-center justify-center 
+          <div ref={AnimeMobileToggle} className={`bg-transparent w-screen h-screen animate__animated ${mobileMenu ? 'animate__slideInLeft' : ''}  animate__faster absolute top-0 left-0 pt-2 flex items-center justify-center z-10
           bg-zinc-300
-          dark:bg-zinc-900/80`}>
+          dark:bg-zinc-900`}>
             <nav className='flex flex-col justify-center items-center gap-3 text-xl
             text-zinc-900 
             dark:text-zinc-300'>
 
               {links.map(link => (
-                <NavLink exact to={link.path} key={link.path}
+                <NavLink to={link.path} key={link.path}
                   onClick={toggleMobileMenu}
                   className={`py-1 px-5 rounded-l-full rounded-r-full duration-300 min-w-[10rem] h-full flex justify-center items-center pb-1.5 
                 ${isActive(link.path)
@@ -90,7 +89,7 @@ export default function Navbar() {
         bg-zinc-800/20 text-zinc-900 '>
 
           {links.map(link => (
-            <NavLink exact to={link.path} key={link.path}
+            <NavLink to={link.path} key={link.path}
               className={`py-1 px-5 rounded-l-full rounded-r-full duration-500 min-w-[5rem] h-full flex justify-center items-center pb-1.5
                 ${isActive(link.path)
                   ? 'bg-zinc-900 text-zinc-300 dark:bg-zinc-300 dark:text-zinc-900'
@@ -106,8 +105,8 @@ export default function Navbar() {
           dark:bg-zinc-700/20 dark:text-zinc-300 dark:hover:bg-zinc-500/40
           bg-zinc-800/20 text-zinc-900  hover:bg-zinc-800/40'>
 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 stroke-zinc-900 dark:stroke-zinc-300">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 stroke-zinc-900 dark:stroke-zinc-300">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
 
           </button>
