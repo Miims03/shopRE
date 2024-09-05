@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <main className='w-full h-full flex flex-col items-center justify-start text-3xl font-semibold py-10 gap-20'>
-
+      
 
       <div className="bg-clip-border bg-gradient-to-r border-transparent rounded-full animate__animated animate__fadeIn slow from-zinc-900 to-[#969290] ">
         <div className='bg-clip-padding h-full w-full bg-zinc-300 border-2 border-transparent flex items-center justify-center rounded-full px-4'>

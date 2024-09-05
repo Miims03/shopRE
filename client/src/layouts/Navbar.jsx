@@ -53,7 +53,7 @@ export default function Navbar() {
         <HamburgerToggle active={toggleMobileMenu} check={isChecked} disable={isDisabled} />
         {mobileMenu && (
           <div ref={AnimeMobileToggle} className={`bg-transparent w-screen h-screen animate__animated ${mobileMenu ? 'animate__slideInLeft' : ''}  animate__faster absolute top-0 left-0 pt-2 flex items-center justify-center 
-          bg-zinc-300/80
+          bg-zinc-300
           dark:bg-zinc-900/80`}>
             <nav className='flex flex-col justify-center items-center gap-3 text-xl
             text-zinc-900 

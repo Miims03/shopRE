@@ -8,11 +8,12 @@ const User = database.define('users', {
         type: DataTypes.UUID,
         defaultValue: uuidv4,  // Utilise la fonction uuidv4 pour générer un UUID par défaut
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
     },
     username: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     email: {
         type: DataTypes.STRING,
@@ -20,6 +21,18 @@ const User = database.define('users', {
         unique: true
     },
     password: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    dob: {
+        type: DataTypes.DATEONLY,
+        allowNull: false
+    },
+    firstname: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    lastname: {
         type: DataTypes.STRING,
         allowNull: false
     }

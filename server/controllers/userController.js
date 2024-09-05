@@ -4,7 +4,7 @@ const validator = require("validator");
 const jwt = require("jsonwebtoken");
 const checkEmailValidity = require("../modules/emailCheck");
 const { Op } = require('sequelize');
-
+const moment = require('moment-timezone');
 
 const createToken = (_id) => {
     const jwtKey = process.env.JWT_SECRET_KEY
@@ -13,7 +13,7 @@ const createToken = (_id) => {
 
 const registerUser = async (req, res) => {
     try {
-        const { username, email, password } = req.body
+        const { username, email, password, dob, firstname, lastname } = req.body
 
         const isEmailValid = await checkEmailValidity(email);
 
@@ -34,7 +34,7 @@ const registerUser = async (req, res) => {
                 return res.status(400).json('Username already registered.')
         }
 
-        if (!username || !email || !password)
+        if (!username || !email || !password || !dob || !firstname || !lastname)
             return res.status(400).json('All fields required...')
 
         if (!validator.isEmail(email))
@@ -45,11 +45,17 @@ const registerUser = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
+        // const now = moment().tz('Europe/Paris')
+
         const newUser = await userModel.create({
             username: username,
             email: email,
-            password: hashedPassword
+            password: hashedPassword,
+            dob: dob,
+            firstname: firstname,
+            lastname: lastname,
         });
+        
 
         const token = createToken(newUser._id)
 
