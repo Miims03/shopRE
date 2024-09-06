@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate  } from 'react-router-dom'; // Si vous utilisez react-router-dom
+import { useNavigate  } from 'react-router-dom';
 
 const Logout = () => {
     const navigate = useNavigate();

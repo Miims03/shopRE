@@ -1,12 +1,12 @@
 import 'animate.css';
 import { Route, Routes, Navigate } from 'react-router-dom'
-import Home from './pages/Home'
 import Navbar from './layouts/Navbar'
 import Indic from './layouts/Indic'
 import Shop from './pages/Shop'
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Logout from './components/Logout';
+import Home from './pages/Home';
 
 
 function App() {

@@ -6,7 +6,7 @@ export const fetchUserData = async (userId) => {
         const response = await axiosInstance.get(`/users/find/${userId}`);
         return response.data;
     } catch (error) {
-        throw error; // Propager l'erreur pour une gestion ultérieure
+        throw error;
     }
 };
 
@@ -15,7 +15,7 @@ export const fetchAllUsers = async () => {
         const response = await axiosInstance.get('/users/find');
         return response.data;
     } catch (error) {
-        throw error; // Propager l'erreur pour une gestion ultérieure
+        throw error;
     }
 };
 
@@ -28,7 +28,7 @@ export const loginUser = async ({username, email, password}) => {
         });
         return response.data;
     } catch (error) {
-        throw error; // Propager l'erreur pour le traitement dans le composant
+        throw error;
     }
 };
 
@@ -44,6 +44,6 @@ export const signupUser = async ({username, email, password, dob, firstname, las
         });
         return response.data;
     } catch (error) {
-        throw error; // Propager l'erreur pour le traitement dans le composant
+        throw error;
     }
 };

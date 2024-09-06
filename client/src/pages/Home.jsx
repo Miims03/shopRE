@@ -9,15 +9,15 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // const getAllUserData = async () => {
-    //   try {
-    //     const userData = await fetchAllUsers();
-    //     setUsers(userData);
-    //   } catch (error) {
-    //     setError(error);
-    //   }
-    // };
-    // getAllUserData();
+    const getAllUserData = async () => {
+      try {
+        const userData = await fetchAllUsers();
+        setUsers(userData);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    getAllUserData();
   }, []);
 
   if (error) return <div className='text-xl text-zinc-900 font-semibold mt-20'>Error: {error.message}</div>;
@@ -31,7 +31,7 @@ export default function Home() {
           users ?
             <div>
               <h1 className='text-zinc-900 dark:text-zinc-300'>Protected Data</h1>
-              <pre className='text-md text-zinc-900 mt-20'>{JSON.stringify(users, null, 2)}</pre>
+              <pre className='text-xs text-zinc-900 dark:text-zinc-300 mt-20'>{JSON.stringify(users, null, 2)}</pre>
             </div>
             :
             <div className='flex items-end justify-center text-zinc-900 dark:text-zinc-300 text-lg gap-2'>

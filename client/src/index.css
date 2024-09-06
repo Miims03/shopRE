@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 .gradient-border {
     border-image-slice: 1;
     border-width: 2px;
@@ -19,4 +19,5 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-  }
+  } */
+

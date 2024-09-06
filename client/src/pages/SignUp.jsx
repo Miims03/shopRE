@@ -64,9 +64,9 @@ export default function SignUp() {
       <h1 className='text-zinc-900 dark:text-zinc-300 text-3xl font-semibold'>Sign Up</h1>
       <form onSubmit={handleSubmit} className='flex flex-col justify-start items-center max-w-1/3 '>
         <div className='flex justify-center items-start gap-2 w-full'>
-          <label class="form-control w-full ">
-            <div class="label">
-              <span class="label-text text-zinc-900  dark:text-zinc-300 font-semibold text-lg">Firstname</span>
+          <label className="form-control w-full ">
+            <div className="label">
+              <span className="label-text text-zinc-900  dark:text-zinc-300 font-semibold text-lg">Firstname</span>
             </div>
             <input
               className='input input-bordered w-full  text-zinc-900  dark:text-zinc-300 bg-zinc-800/20 placeholder-zinc-800/50 dark:placeholder-zinc-400/50 text-base font-semibold '
@@ -77,9 +77,9 @@ export default function SignUp() {
               onChange={(e) => setFirstname(e.target.value)}
             />
           </label>
-          <label class="form-control w-full max-w-xs">
-            <div class="label">
-              <span class="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Lastname</span>
+          <label className="form-control w-full max-w-xs">
+            <div className="label">
+              <span className="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Lastname</span>
             </div>
             <input
               className='input input-bordered w-full max-w-xs bg-zinc-800/20 placeholder-zinc-800/50 dark:placeholder-zinc-400/50 text-base font-semibold text-zinc-900  dark:text-zinc-300'
@@ -92,9 +92,9 @@ export default function SignUp() {
           </label>
 
         </div>
-        <label class="form-control w-full">
-          <div class="label">
-            <span class="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Username</span>
+        <label className="form-control w-full">
+          <div className="label">
+            <span className="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Username</span>
           </div>
           <input
             className='input input-bordered w-full max-w-full bg-zinc-800/20 placeholder-zinc-800/50 dark:placeholder-zinc-400/50 text-base font-semibold text-zinc-900 dark:text-zinc-300'
@@ -105,9 +105,9 @@ export default function SignUp() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
-        <label class="form-control w-full">
-          <div class="label">
-            <span class="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Email</span>
+        <label className="form-control w-full">
+          <div className="label">
+            <span className="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Email</span>
           </div>
           <input
             className='input input-bordered w-full max-w-full bg-zinc-800/20 placeholder-zinc-800/50 dark:placeholder-zinc-400/50 text-base font-semibold text-zinc-900 dark:text-zinc-300 '
@@ -118,9 +118,9 @@ export default function SignUp() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <label class="form-control w-full">
-          <div class="label">
-            <span class="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Date of birth</span>
+        <label className="form-control w-full">
+          <div className="label">
+            <span className="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Date of birth</span>
           </div>
           <DatePicker
             selected={dob}
@@ -133,9 +133,9 @@ export default function SignUp() {
 
 
         <div className='flex justify-center items-start gap-2 w-full'>
-          <label class="form-control w-full">
-            <div class="label">
-              <span class="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Password</span>
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Password</span>
             </div>
             <input
               className='input input-bordered w-full max-w-xs bg-zinc-800/20 placeholder-zinc-800/50 dark:placeholder-zinc-400/50 text-base font-semibold text-zinc-900 dark:text-zinc-300'
@@ -146,9 +146,9 @@ export default function SignUp() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          <label class="form-control w-full">
-            <div class="label">
-              <span class="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Confirme password</span>
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text text-zinc-900 dark:text-zinc-300 font-semibold text-lg">Confirme password</span>
             </div>
             <input
               className='input input-bordered w-full max-w-xs bg-zinc-800/20 placeholder-zinc-800/50 dark:placeholder-zinc-400/50 text-base font-semibold text-zinc-900 dark:text-zinc-300'
@@ -165,7 +165,7 @@ export default function SignUp() {
           {loading ?
             <div className='flex items-end justify-center text-zinc-300 dark:text-zinc-900 text-lg gap-2'>
               <p>Loading</p>
-              <span class="loading loading-dots loading-xs mb-0.5"></span>
+              <span className="loading loading-dots loading-xs mb-0.5"></span>
             </div>
             :
             <p className='text-zinc-300 dark:text-zinc-900 font-semibold text-lg'>Register</p>}
