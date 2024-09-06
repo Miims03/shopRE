@@ -35,7 +35,11 @@ const User = database.define('users', {
     lastname: {
         type: DataTypes.STRING,
         allowNull: false
-    }
+    },
+    isEmailConfirmed: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    },
 });
 
 database.sync()

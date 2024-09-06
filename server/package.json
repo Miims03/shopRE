@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node node_modules/nodemon/bin/nodemon.js index.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "moment-timezone": "^0.5.45",
     "mysql2": "^3.11.0",
     "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.15",
     "nodemon": "^3.1.4",
     "sequelize": "^6.37.3",
     "uuid": "^10.0.0",
