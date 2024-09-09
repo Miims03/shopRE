@@ -85,7 +85,7 @@ const registerUser = async (req, res) => {
     try {
         const { username, email, password, dob, firstname, lastname } = req.body
 
-        // const isEmailValid = await checkEmailValidity(email);
+        const isEmailValid = await checkEmailValidity(email);
 
         const user = await userModel.findOne({
             where: {
@@ -107,8 +107,8 @@ const registerUser = async (req, res) => {
         if (!validator.isEmail(email))
             return res.status(400).json("Email is not valid...")
 
-        // if (!isEmailValid)
-        //     return res.status(400).json("Email does not exist...")
+        if (!isEmailValid)
+            return res.status(400).json("Email does not exist...")
 
 
 
